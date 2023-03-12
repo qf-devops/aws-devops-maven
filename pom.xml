@@ -58,6 +58,21 @@
             </plugin>
         </plugins>
     </build>
-
+    <distributionManagement>
+    <repository>
+      <uniqueVersion>false</uniqueVersion>
+      <id>demo-releases</id>
+      <name>demo-releases</name>
+      <url>http://ec2-3-108-54-182.ap-south-1.compute.amazonaws.com:8081/repository/demo-releases/</url>
+      <layout>default</layout>
+    </repository>
+    <snapshotRepository>
+      <uniqueVersion>true</uniqueVersion>
+      <id>demo-snapshots</id>
+      <name>demo-snapshots</name>
+      <url>http://ec2-3-108-54-182.ap-south-1.compute.amazonaws.com:8081/repository/demo-snapshots/</url>
+      <layout>legacy</layout>
+    </snapshotRepository>
+    </distributionManagement>
 
 </project>
