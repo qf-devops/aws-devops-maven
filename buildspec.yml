@@ -9,6 +9,8 @@ phases:
     commands:
     - echo installing maven...
     - apt-get update -y
+    - apt-get install openjdk-11-jdk -y
+    - java -version
     - apt-get install -y maven
   build:
     commands:
