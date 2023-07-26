@@ -10,11 +10,13 @@ phases:
     - echo installing maven...
     - apt-get update -y
     - apt-get install docker.io -y
-
   build:
     commands:
     - echo building the justiceleague-tracker
-    - dcoker build -t mycustom:latest .
+    - docker build -t abc:latest .
+    - docker tag abc:latest xxxxxx.dkr.ecr.ap-south-1.amazonaws.com/abc:latest
+    - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin xxxxxx.dkr.ecr.ap-south-1.amazonaws.com
+    - docker push xxxxx.dkr.ecr.ap-south-1.amazonaws.com/abc:latest
 artifacts:
   files:
   - target/*.jar
